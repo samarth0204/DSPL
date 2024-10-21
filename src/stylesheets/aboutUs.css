@@ -136,7 +136,7 @@
     }
 
     .about-text {
-        width: 90%; /* Full width for text */
+        width: 100%; /* Full width for text */
         padding: 0; /* Remove padding */
         text-align: center; /* Center align text */
     }

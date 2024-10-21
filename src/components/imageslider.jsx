@@ -35,7 +35,7 @@ const ImageSlider = () => {
   const images = [img1, img2, img3];
 
   return (
-    <Box sx={{ width: "100vw", height: "100dvh", position: 'relative' }}>
+    <Box sx={{ width: "100%", height: "100dvh", position: 'relative' }}>
       <Slider {...settings}>
         {images.map((image, index) => (
           <Box
