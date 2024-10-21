@@ -249,32 +249,22 @@ const removeWhiteBackground = (imageSrc) => {
       const data = imageData.data;
 
       for (let i = 0; i < data.length; i += 4) {
+        // If the pixel is white (or close to it), set it to transparent
         if (data[i] > 200 && data[i + 1] > 200 && data[i + 2] > 200) {
-          data[i + 3] = 0;
+          data[i + 3] = 0; // Set alpha to 0 (transparent)
         }
       }
 
       ctx.putImageData(imageData, 0, 0);
-      resolve(canvas.toDataURL());
+      resolve(canvas.toDataURL()); // Return the new image with a transparent background
     };
   });
-};
-
-const preloadImages = (images) => {
-  return Promise.all(images.map(src => {
-    return new Promise(resolve => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => resolve(src);
-    });
-  }));
 };
 
 export default function ProductShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [processedImage, setProcessedImage] = useState('');
-  const [imageSrcs, setImageSrcs] = useState([]);
 
   const currentProduct = products[currentIndex];
 
@@ -306,11 +296,6 @@ export default function ProductShowcase() {
       nextProduct();
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const imageUrls = products.map(product => product.image);
-    preloadImages(imageUrls).then(setImageSrcs);
   }, []);
 
   useEffect(() => {
@@ -423,7 +408,6 @@ export default function ProductShowcase() {
                   objectFit: 'contain',
                   transform: 'rotate(15deg)',
                   filter: 'drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3))',
-                  transition: 'opacity 0.5s ease-in-out', // Smooth transition
                 }}
                 initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
                 animate={{ opacity: 1, scale: 1, rotate: 15 }}
