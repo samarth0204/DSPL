@@ -1,6 +1,6 @@
-import mirchi from "../images/mirchi.jpeg";
-import dhaniya from "../images/dhaniya.jpeg";
-import haldi from "../images/haldi.jpeg";
+import mirchi from "../images/mirchi.jpeg"; // Use PNG for transparency
+import dhaniya from "../images/dhaniya.png"; // Use PNG for transparency
+import haldi from "../images/haldi.jpeg"; // Use PNG for transparency
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -11,7 +11,7 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
-// ViewAllButton styled as requested
+// Styled View All Button
 const ViewAllButton = styled(Button)(({ theme }) => ({
   padding: '10px 30px',
   backgroundColor: 'black',
@@ -147,6 +147,7 @@ export default function MUICoolTextSlider() {
          <Typography variant="h2" component="h2" gutterBottom sx={{ color: 'white', mb: 4 }}>
           Products
         </Typography>
+        
         {/* Product showcase */}
         <Box
           sx={{
@@ -167,6 +168,9 @@ export default function MUICoolTextSlider() {
               aspectRatio: '1',
               position: 'relative',
               order: { xs: 1, md: 2 },
+              marginTop: { xs: 0, md: -5 }, // Negative margin to pull it upwards
+              zIndex: 1, // Higher z-index for image to ensure it overlaps
+              bgcolor: 'transparent', // Set background to transparent
             }}
           >
             <AnimatePresence initial={false} custom={direction}>
@@ -179,9 +183,13 @@ export default function MUICoolTextSlider() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'contain',
+                  top: '0%', // Align the top of the image
+                  left: '0%', // Align the left of the image
+                  mixBlendMode: 'multiply', // Blend mode for effect
+                  background: 'transparent', // Ensures no background is visible
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1, rotate: { xs: 0, sm: 0, md: 15 } }}
+                animate={{ opacity: 1, scale: 1 }} // Removed rotation here
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
               />
@@ -196,6 +204,7 @@ export default function MUICoolTextSlider() {
               aspectRatio: '1',
               position: 'relative',
               order: { xs: 2, md: 1 },
+              zIndex: 0, // Lower z-index to allow overlapping
             }}
           >
             <Paper
@@ -227,6 +236,7 @@ export default function MUICoolTextSlider() {
                     justifyContent: 'center',
                     padding: theme.spacing(3),
                     textAlign: 'center',
+                    transform: 'translateY(-20%)', // Move text slider upwards to overlap
                   }}
                 >
                   <motion.div
@@ -239,13 +249,7 @@ export default function MUICoolTextSlider() {
                     </Typography>
                   </motion.div>
                   <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-                    <Typography variant="subtitle1" gutterBottom>
-                      PACKING IN :
-                    </Typography>
-                    <Typography variant="body2">{currentProduct.packingSizes.join(', ')}</Typography>
-                  </motion.div>
-                  <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
-                    <Typography variant="body2" sx={{ mt: 2 }}>
+                    <Typography variant="body1" sx={{ color: 'white' }}>
                       {currentProduct.description}
                     </Typography>
                   </motion.div>
@@ -267,12 +271,11 @@ export default function MUICoolTextSlider() {
           </Box>
           
           {/* ViewAllButton positioned exactly below navigation buttons */}
-          {/* Use Link to navigate to AllProducts page */}
           <Link to="/all-products" style={{ textDecoration: 'none' }}>
             <ViewAllButton variant="contained">
               <span>View All</span>
             </ViewAllButton>
-        </Link>
+          </Link>
         </Box>
       </Box>
     </ThemeProvider>

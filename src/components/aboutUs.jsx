@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link
 import img1 from "../images/blackBg.jpg";
 import img2 from "../images/starBg.jpg";
 import img3 from "../images/blackBg.jpg";
@@ -55,9 +56,12 @@ const AboutUs = () => {
           home-cooked meal, DSPL spices are here to elevate your culinary experiences
           and enrich the memories shared around the table.
         </p>
-        <button className="learn-more-btn">
-          <span>Learn More</span>
-        </button>
+        {/* Updated button to use Link for navigation */}
+        <Link to="/about" style={{ textDecoration: 'none' }}>
+          <button className="learn-more-btn">
+            <span>Learn More</span>
+          </button>
+        </Link>
       </div>
     </section>
   );
