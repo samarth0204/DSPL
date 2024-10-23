@@ -13,6 +13,7 @@ import {
   useTheme,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -20,8 +21,14 @@ export default function NavBar() {
   const [scrolling, setScrolling] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const menuItems = ['Home', 'About', 'Services', 'Contact'];
+  const menuItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Products', path: '/all-products' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -34,28 +41,29 @@ export default function NavBar() {
   };
 
   const handleButtonClick = (item) => {
-    setActiveButton(item);
+    setActiveButton(item.name);
+    navigate(item.path); // Navigate to the corresponding path
   };
 
   const list = () => (
     <List>
-      {menuItems.map((text) => (
+      {menuItems.map((item) => (
         <ListItem
           button
-          key={text}
+          key={item.name}
           onClick={() => {
             toggleDrawer(false)({ type: 'click' });
-            handleButtonClick(text);
+            handleButtonClick(item);
           }}
           sx={{
-            backgroundColor: activeButton === text ? 'red' : 'transparent',
+            backgroundColor: activeButton === item.name ? 'red' : 'transparent',
             color: 'white',
             '&:hover': {
-              backgroundColor: activeButton === text ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
+              backgroundColor: activeButton === item.name ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
             },
           }}
         >
-          <ListItemText primary={text} />
+          <ListItemText primary={item.name} />
         </ListItem>
       ))}
     </List>
@@ -120,19 +128,19 @@ export default function NavBar() {
             {menuItems.map((item) => (
               <Button
                 color="inherit"
-                key={item}
+                key={item.name}
                 onClick={() => handleButtonClick(item)}
                 sx={{
                   marginLeft: 2,
-                  backgroundColor: activeButton === item ? 'red' : 'transparent',
-                  border: activeButton === item ? 'none' : '1px solid red',
+                  backgroundColor: activeButton === item.name ? 'red' : 'transparent',
+                  border: activeButton === item.name ? 'none' : '1px solid red',
                   color: 'white',
                   '&:hover': {
-                    backgroundColor: activeButton === item ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
+                    backgroundColor: activeButton === item.name ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
                   },
                 }}
               >
-                {item}
+                {item.name}
               </Button>
             ))}
           </div>
