@@ -31,11 +31,21 @@ const AboutUsAll = () => {
                 crafted, not cobbled, for a delightful experience.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} 
+              sx={{
+                bgcolor: 'transparent',
+                overflow: 'hidden',
+                clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%)' // Example of a custom curve shape
+              }}>
               <img 
                 src= {`${images}`}
                 alt="Team" 
-                style={{ width: '100%', height: 'auto' }}
+                style={{ 
+                  width: '100%',
+                  height: '100%' ,
+                  objectFit: 'cover',
+                  clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%)'  // Match the same clip-path  
+                }}
               />
             </Grid>
           </Grid>
@@ -43,11 +53,22 @@ const AboutUsAll = () => {
 
         <Box sx={{ mb: 4 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6}
+            sx={{
+              bgcolor: 'transparent',
+              overflow: 'hidden',
+              clipPath: 'polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)' // Example of a custom curve shape
+            }}>
+              
               <img 
                 src={`${images}`} 
                 alt="Office" 
-                style={{ width: '100%', height: 'auto' }}
+                style={{ 
+                  width: '100%',
+                  height: '100%' ,
+                  objectFit: 'cover',
+                  clipPath: 'polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)'  // Match the same clip-path  
+                }}
               />
             </Grid>
             <Grid item xs={12} md={6}>
@@ -80,11 +101,21 @@ const AboutUsAll = () => {
                 marketers or harassed by salespeople — they want to be helped.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4}
+            sx={{
+              bgcolor: 'transparent',
+              overflow: 'hidden',
+              clipPath: 'polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)' // Example of a custom curve shape
+            }}>
               <img 
                 src={`${images}`} 
                 alt="Founder" 
-                style={{ width: '100%', height: 'auto' }}
+                style={{ 
+                  width: '100%',
+                  height: '100%' ,
+                  objectFit: 'cover',
+                  clipPath: 'polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)'  // Match the same clip-path  
+                }}
               />
             </Grid>
           </Grid>

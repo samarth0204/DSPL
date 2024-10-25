@@ -1,6 +1,3 @@
-import mirchi from "../images/mirchi.jpeg"; // Use PNG for transparency
-import dhaniya from "../images/dhaniya.png"; // Use PNG for transparency
-import haldi from "../images/haldi.jpeg"; // Use PNG for transparency
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -10,6 +7,11 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+
+// Import images
+import mirchi from "../images/mirchi.jpeg";
+import dhaniya from "../images/dhaniya.png";
+import haldi from "../images/haldi.jpeg";
 
 // Styled View All Button
 const ViewAllButton = styled(Button)(({ theme }) => ({
@@ -55,7 +57,7 @@ const products = [
     description: 'A fine-ground Turmeric Powder or Haldi Powder is made with Salem Turmeric...',
     color: '#FFC300',
     packingSizes: ['100 gms', '200 gms', '500 gms', '1 kg'],
-    image: `${haldi}`,
+    image: haldi,
   },
   {
     id: '2',
@@ -63,7 +65,7 @@ const products = [
     description: 'Freshly ground coriander powder...',
     color: '#2ECC71',
     packingSizes: ['100 gms', '200 gms', '500 gms', '1 kg'],
-    image: `${dhaniya}`,
+    image: dhaniya,
   },
   {
     id: '3',
@@ -71,7 +73,7 @@ const products = [
     description: 'Vibrant red chilli powder...',
     color: '#E74C3C',
     packingSizes: ['100 gms', '200 gms', '500 gms', '1 kg'],
-    image: `${mirchi}`,
+    image: mirchi,
   },
 ];
 
@@ -143,8 +145,8 @@ export default function MUICoolTextSlider() {
           position: 'relative',
         }}
       >
-         {/* "Products" Heading */}
-         <Typography variant="h2" component="h2" gutterBottom sx={{ color: 'white', mb: 4 }}>
+        {/* "Products" Heading */}
+        <Typography variant="h2" component="h2" gutterBottom sx={{ color: 'white', mb: 4 }}>
           Products
         </Typography>
         
@@ -157,20 +159,22 @@ export default function MUICoolTextSlider() {
             justifyContent: 'center',
             width: '100%',
             maxWidth: '1000px',
-            gap: { xs: 2, sm: 3, md: 4 },
+            gap: { xs: 1, sm: 1, md: 1 },
           }}
         >
           {/* Image slider */}
           <Box
             sx={{
               width: '100%',
-              maxWidth: { xs: '200px', sm: '250px', md: '500px' },
+              maxWidth: { xs: '200px', sm: '250px', md: '400px' },
               aspectRatio: '1',
               position: 'relative',
               order: { xs: 1, md: 2 },
-              marginTop: { xs: 0, md: -5 }, // Negative margin to pull it upwards
-              zIndex: 1, // Higher z-index for image to ensure it overlaps
-              bgcolor: 'transparent', // Set background to transparent
+              marginTop: { xs: 0, md: -5 },
+              marginLeft: { xs: 0, md: -10 },
+              zIndex: { xs: 0, md: 1 },
+              bgcolor: 'transparent',
+              transform: { xs: 'none', sm:'none' , md: 'rotate(5deg)' },
             }}
           >
             <AnimatePresence initial={false} custom={direction}>
@@ -183,13 +187,17 @@ export default function MUICoolTextSlider() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'contain',
-                  top: '0%', // Align the top of the image
-                  left: '0%', // Align the left of the image
-                  mixBlendMode: 'multiply', // Blend mode for effect
-                  background: 'transparent', // Ensures no background is visible
+                  top: '0%',
+                  left: '0%',
+                  mixBlendMode: 'multiply',
+                  background: 'transparent',
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }} // Removed rotation here
+                animate={{ 
+                  opacity: 1, 
+                  scale: 1,
+                  rotate: window.innerWidth >= theme.breakpoints.values.md ? 0 : 5
+                }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
               />
@@ -204,7 +212,8 @@ export default function MUICoolTextSlider() {
               aspectRatio: '1',
               position: 'relative',
               order: { xs: 2, md: 1 },
-              zIndex: 0, // Lower z-index to allow overlapping
+              zIndex: 0,
+              marginRight: { xs: 0, md: -3 },
             }}
           >
             <Paper
@@ -236,7 +245,7 @@ export default function MUICoolTextSlider() {
                     justifyContent: 'center',
                     padding: theme.spacing(3),
                     textAlign: 'center',
-                    transform: 'translateY(-20%)', // Move text slider upwards to overlap
+                    transform: 'translateY(-20%)',
                   }}
                 >
                   <motion.div
