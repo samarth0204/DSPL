@@ -1,17 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Button,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  useMediaQuery,
-  useTheme,
-  Box,
-} from '@mui/material';
+import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate, useLocation } from 'react-router-dom'; // Import useNavigate and useLocation
 import logo from "../images/logo.jpeg";
@@ -22,7 +10,6 @@ export default function NavBar() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const navigate = useNavigate(); // Initialize useNavigate
   const location = useLocation(); // Get the current path
-
   const menuItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -48,7 +35,6 @@ export default function NavBar() {
     const handleScroll = () => {
       setScrolling(window.scrollY > 50); // Change threshold as needed
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -70,14 +56,12 @@ export default function NavBar() {
             height: 70, // Set a fixed height
             maxWidth: '100%', // Ensure it doesn't stretch beyond its natural width
             objectFit: 'contain',
-           
             cursor: 'pointer', // Optional: cursor pointer for clicking the logo
           }}
           alt="Brand Logo"
           src={`${logo}`} // Provide the path to your image here
           onClick={() => navigate('/')} // Optional: Add navigation to home on logo click
         />
-
         {isMobile ? (
           <>
             <IconButton
