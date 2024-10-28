@@ -62,7 +62,7 @@ const ContactUs = () => {
           />
           <Marker position={center}>
             <Popup>
-            <a href="https://maps.app.goo.gl/FwjWjqTGvnjXcFMx5" >DSPL</a>
+            <a href="https://maps.app.goo.gl/FwjWjqTGvnjXcFMx5" target="_blank" >DSPL</a>
             </Popup>
           </Marker>
         </MapContainer>
