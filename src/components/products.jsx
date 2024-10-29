@@ -183,12 +183,12 @@ export default function MUICoolTextSlider() {
           height: '100%',
           objectFit: 'contain',
           top: '0%',
-          left: '0%',
+          left: '10%',
           mixBlendMode: 'multiply',
           background: 'transparent',
         }}
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 , rotate: -5 }}
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.5 }}
       />
