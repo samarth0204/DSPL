@@ -7,11 +7,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-
-// Import images
-import mirchi from "../images/mirchi.jpeg";
-import dhaniya from "../images/dhaniya.png";
-import haldi from "../images/haldi.jpeg";
+import { products } from '../constants/productInfo';
 
 // Styled View All Button
 const ViewAllButton = styled(Button)(({ theme }) => ({
@@ -49,7 +45,7 @@ const ViewAllButton = styled(Button)(({ theme }) => ({
     zIndex: 1,
   },
 }));
-
+/*
 const products = [
   {
     id: '1',
@@ -76,7 +72,7 @@ const products = [
     image: mirchi,
   },
 ];
-
+*/
 const slideVariants = {
   enter: (direction) => ({
     x: direction > 0 ? '100%' : '-100%',

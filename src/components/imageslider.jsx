@@ -2,20 +2,21 @@ import React from 'react';
 import Slider from 'react-slick';
 import styled from '@emotion/styled';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import img1 from '../images/blackBg.jpg';
+import img1 from '../images/3.jpg';
 import img2 from '../images/starBg.jpg';
-import img3 from '../images/blackBg.jpg';
+import img3 from '../images/3.jpg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const SliderWrapper = styled(Box)`
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  overflow: hidden;
 `;
 
 const SlideImage = styled.img`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   object-fit: cover;
 `;
@@ -24,7 +25,7 @@ const TextOverlay = styled(Box)`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -37,7 +38,8 @@ const TextOverlay = styled(Box)`
 const TextContent = styled(Box)`
   color: white;
   text-align: left;
-  width: 100vw;
+  width: 100%;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     text-align: center;
