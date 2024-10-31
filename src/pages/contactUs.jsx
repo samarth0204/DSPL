@@ -203,19 +203,19 @@ const ContactUs = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                 <LocationOnIcon sx={{ mr: 1 }} />
                 <Typography variant="body1">
-                  Address: Krushal Commercial Complex, G. M. Road, Amar Mahal, Chembur (West), Mumbai - 400 089.
+                  Address: 29/1, Saraswati Udhyog Nagar, Khasra No. 446/1/2, Gram Badiya Keema Nemawar Road, Indore - 452016 (M.P.)
                 </Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                 <PhoneIcon sx={{ mr: 1 }} />
                 <Typography variant="body1">
-                  Customer Care No: +91 22 25259915
+                  Customer Care No: +91 8871147664
                 </Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <EmailIcon sx={{ mr: 1 }} />
                 <Typography variant="body1">
-                  Customer Care Email: customercare@everestspices.com
+                  Customer Care Email: dhamejaspicespvtltd@gmail.com
                 </Typography>
               </Box>
             </Box>
