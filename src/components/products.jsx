@@ -148,121 +148,117 @@ export default function MUICoolTextSlider() {
         
         {/* Product showcase */}
         <Box
-          sx={{
+  sx={{
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    maxWidth: '1000px',
+    gap: { xs: 1, sm: 1, md: 1 },
+  }}
+>
+  {/* Image slider (moved to left) */}
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: { xs: '200px', sm: '250px', md: '400px' },
+      aspectRatio: '1',
+      position: 'relative',
+      order: { xs: 1, md: 1 }, // Set order to 1 for the left side
+      marginTop: { xs: 0, md: -5 },
+      marginRight: { xs: 0, md: -10 }, // Adjust margin if necessary
+      zIndex: { xs: 0, md: 1 },
+      bgcolor: 'transparent',
+    }}
+  >
+    <AnimatePresence initial={false} custom={direction}>
+      <motion.img
+        key={currentProduct.id}
+        src={currentProduct.image}
+        alt={currentProduct.name}
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+          top: '0%',
+          left: '10%',
+          mixBlendMode: 'multiply',
+          background: 'transparent',
+        }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 , rotate: -5 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.5 }}
+      />
+    </AnimatePresence>
+  </Box>
+
+  {/* Text slider (moved to right) */}
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: { xs: '300px', md: '500px' },
+      aspectRatio: '1',
+      position: 'relative',
+      order: { xs: 2, md: 2 }, // Set order to 2 for the right side
+      zIndex: 0,
+      marginLeft: { xs: 0, md: 3 }, // Adjust margin if necessary
+    }}
+  >
+    <Paper
+      elevation={3}
+      sx={{
+        position: 'absolute',
+        inset: 0,
+        borderRadius: '50%',
+        background: `radial-gradient(circle, ${currentProduct.color}33 0%, transparent 70%)`,
+        boxShadow: `0 0 0 2px ${currentProduct.color}, 0 0 20px ${currentProduct.color}66`,
+        overflow: 'hidden',
+      }}
+    >
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          key={currentProduct.id}
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          style={{
+            position: 'absolute',
+            inset: 0,
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
+            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '100%',
-            maxWidth: '1000px',
-            gap: { xs: 1, sm: 1, md: 1 },
+            padding: theme.spacing(3),
+            textAlign: 'center',
+            transform: 'translateY(-20%)',
           }}
         >
-          {/* Image slider */}
-          <Box
-            sx={{
-              width: '100%',
-              maxWidth: { xs: '200px', sm: '250px', md: '400px' },
-              aspectRatio: '1',
-              position: 'relative',
-              order: { xs: 1, md: 2 },
-              marginTop: { xs: 0, md: -5 },
-              marginLeft: { xs: 0, md: -10 },
-              zIndex: { xs: 0, md: 1 },
-              bgcolor: 'transparent',
-              transform: { xs: 'none', sm:'none' , md: 'rotate(5deg)' },
-            }}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
           >
-            <AnimatePresence initial={false} custom={direction}>
-              <motion.img
-                key={currentProduct.id}
-                src={currentProduct.image}
-                alt={currentProduct.name}
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
-                  top: '0%',
-                  left: '0%',
-                  mixBlendMode: 'multiply',
-                  background: 'transparent',
-                }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ 
-                  opacity: 1, 
-                  scale: 1,
-                  rotate: window.innerWidth >= theme.breakpoints.values.md ? 0 : 5
-                }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5 }}
-              />
-            </AnimatePresence>
-          </Box>
+            <Typography variant="h4" component="h2" gutterBottom sx={{ color: currentProduct.color }}>
+              {currentProduct.name}
+            </Typography>
+          </motion.div>
+          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
+            <Typography variant="body1" sx={{ color: 'white' }}>
+              {currentProduct.description}
+            </Typography>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
+    </Paper>
+  </Box>
+</Box>
 
-          {/* Text slider */}
-          <Box
-            sx={{
-              width: '100%',
-              maxWidth: { xs: '300px', md: '500px' },
-              aspectRatio: '1',
-              position: 'relative',
-              order: { xs: 2, md: 1 },
-              zIndex: 0,
-              marginRight: { xs: 0, md: -3 },
-            }}
-          >
-            <Paper
-              elevation={3}
-              sx={{
-                position: 'absolute',
-                inset: 0,
-                borderRadius: '50%',
-                background: `radial-gradient(circle, ${currentProduct.color}33 0%, transparent 70%)`,
-                boxShadow: `0 0 0 2px ${currentProduct.color}, 0 0 20px ${currentProduct.color}66`,
-                overflow: 'hidden',
-              }}
-            >
-              <AnimatePresence initial={false} custom={direction}>
-                <motion.div
-                  key={currentProduct.id}
-                  custom={direction}
-                  variants={slideVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: theme.spacing(3),
-                    textAlign: 'center',
-                    transform: 'translateY(-20%)',
-                  }}
-                >
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <Typography variant="h4" component="h2" gutterBottom sx={{ color: currentProduct.color }}>
-                      {currentProduct.name}
-                    </Typography>
-                  </motion.div>
-                  <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-                    <Typography variant="body1" sx={{ color: 'white' }}>
-                      {currentProduct.description}
-                    </Typography>
-                  </motion.div>
-                </motion.div>
-              </AnimatePresence>
-            </Paper>
-          </Box>
-        </Box>
 
         {/* Navigation and ViewAll Button */}
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4, gap: 2 }}>
