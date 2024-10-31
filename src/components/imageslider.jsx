@@ -2,9 +2,9 @@ import React from 'react';
 import Slider from 'react-slick';
 import styled from '@emotion/styled';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import img1 from '../images/3.jpg'; // Desktop image
-import img2 from '../images/starBg.jpg'; // Desktop image
-import img3 from '../images/3.jpg'; // Desktop image
+import img1 from '../images/desktop_view_1.jpg'; // Desktop image
+import img2 from '../images/desktop_view_2.jpg'; // Desktop image
+import img3 from '../images/desktop_view_3.jpg'; // Desktop image
 import mobileImg1 from '../images/mobile_view_3.jpg'; // Mobile image
 import mobileImg2 from '../images/mobile_view_4.jpg'; // Mobile image
 import mobileImg3 from '../images/mobile_view_5.jpg'; // Mobile image
@@ -122,13 +122,13 @@ const ImageSlider = () => {
             Quality products by Dhameja spices Pvt. Ltd.
           </Typography>
           <Typography 
-            variant="h3" 
+            variant="h4" 
             sx={{ 
               fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem', lg: '1.8rem' },
               maxWidth: isMobile ? '100%' : '90%'
             }}
           >
-            Quality products by Dhameja spices Pvt. Ltd.
+            Discover the unparalleled quality of our exquisite spice blends
           </Typography>
         </TextContent>
       </TextOverlay>

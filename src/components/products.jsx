@@ -188,7 +188,7 @@ export default function MUICoolTextSlider() {
           background: 'transparent',
         }}
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 , rotate: -5 }}
+        animate={{ opacity: 1, scale: 1 , rotate: {xs: 'none', md: 'none', lg: '-5' } }}
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.5 }}
       />
@@ -204,7 +204,7 @@ export default function MUICoolTextSlider() {
       position: 'relative',
       order: { xs: 2, md: 2 }, // Set order to 2 for the right side
       zIndex: 0,
-      marginLeft: { xs: 0, md: 3 }, // Adjust margin if necessary
+      marginLeft: { xs: 0, md: 0 }, // Adjust margin if necessary
     }}
   >
     <Paper
