@@ -2,9 +2,12 @@ import React from 'react';
 import Slider from 'react-slick';
 import styled from '@emotion/styled';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import img1 from '../images/3.jpg';
-import img2 from '../images/starBg.jpg';
-import img3 from '../images/3.jpg';
+import img1 from '../images/desktop_view_1.jpg'; // Desktop image
+import img2 from '../images/desktop_view_2.jpg'; // Desktop image
+import img3 from '../images/desktop_view_3.jpg'; // Desktop image
+import mobileImg1 from '../images/mobile_view_3.jpg'; // Mobile image
+import mobileImg2 from '../images/mobile_view_4.jpg'; // Mobile image
+import mobileImg3 from '../images/mobile_view_5.jpg'; // Mobile image
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -67,12 +70,14 @@ const ImageSlider = () => {
           width: '100%',
         }}
       >
-        <ul style={{ margin: '0px', padding: '0px' }}> {dots} </ul>
+        <ul style={{ margin: '0px', padding: '0px' }}>{dots}</ul>
       </Box>
     ),
   };
 
-  const images = [img1, img2, img3];
+  const images = isMobile
+    ? [mobileImg1, mobileImg2, mobileImg3]
+    : [img1, img2, img3];
 
   return (
     <SliderWrapper>
@@ -94,7 +99,7 @@ const ImageSlider = () => {
               maxWidth: isMobile ? '100%' : '70%'
             }}
           >
-            Divydamini
+            Divydamini Masale
           </Typography>
           <Typography 
             variant="h2" 
@@ -104,16 +109,26 @@ const ImageSlider = () => {
               maxWidth: isMobile ? '100%' : '80%'
             }}
           >
-            The real taste of spices
+            The Real Taste of Spices
           </Typography>
           <Typography 
             variant="h3" 
             sx={{ 
               fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem', lg: '1.8rem' },
+              maxWidth: isMobile ? '100%' : '90%',
+              marginBottom: { xs: 1, sm: 2 },
+            }}
+          >
+            Quality products by Dhameja spices Pvt. Ltd.
+          </Typography>
+          <Typography 
+            variant="h4" 
+            sx={{ 
+              fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem', lg: '1.8rem' },
               maxWidth: isMobile ? '100%' : '90%'
             }}
           >
-            Quality product by DSPL
+            Discover the unparalleled quality of our exquisite spice blends
           </Typography>
         </TextContent>
       </TextOverlay>
