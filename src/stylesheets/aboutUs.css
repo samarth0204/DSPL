@@ -33,29 +33,29 @@
 .about-images img:nth-child(1) {
     top: -10;
     left: 0;
-    border: 5px solid rgba(255, 0, 0, 0.8); /* Red border with 80% opacity */
+     /* Red border with 80% opacity */
     opacity: 0.6; /* Slightly transparent */
 }
 
 .about-images img:nth-child(2) {
     top: 10%;
     left: 40%;
-    border: 5px solid rgba(255, 255, 0, 0.9); /* Yellow border with 90% opacity */
+    /* Yellow border with 90% opacity */
     opacity: 0.85; /* Less transparent */
 }
 
 .about-images img:nth-child(3) {
     top: 50%;
     left: 50%;
-    border: 5px solid rgba(255, 0, 0, 0.7); /* Red border with 70% opacity */
+     /* Red border with 70% opacity */
     opacity: 0.8; /* More transparent */
 }
 
 .about-images img:nth-child(4) {
     top: 60%;
-    left: 30%;
-    border: 5px solid rgba(0, 255, 0, 0.85); /* Green border with 85% opacity */
-    opacity: 0.9; /* Slightly transparent */
+    left: 35%;
+    border: 5px solid rgba(255, 0, 0, 0.85); /* Green border with 85% opacity */
+    opacity: 1; /* Slightly transparent */
 }
 
 /* Text content */

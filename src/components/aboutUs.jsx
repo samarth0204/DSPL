@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Import Link
-import img1 from "../images/blackBg.jpg";
-import img2 from "../images/starBg.jpg";
-import img3 from "../images/blackBg.jpg";
-import img4 from "../images/starBg.jpg";
+import img1 from "../images/aboutUs_1.png";
+import img3 from "../images/spice-variety-mix-plates-wallpaper-preview.jpg";
+import img2 from "../images/aboutUs_2.png";
+import img4 from "../images/DSPL.png";
 import "../stylesheets/aboutUs.css"; // Importing the CSS
 
 const AboutUs = () => {
@@ -42,7 +42,7 @@ const AboutUs = () => {
         <img
           src={img4}
           alt="image4"
-          style={{ transform: `translateY(${scrollY * -0.05}px)` }} // Slight up
+          style={{background:'black', transform: `translateY(${scrollY * -0.05}px)` }} // Slight up
         />
       </div>
       <div className="about-text">
