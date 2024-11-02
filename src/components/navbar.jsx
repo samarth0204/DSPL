@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate, useLocation } from 'react-router-dom'; // Import useNavigate and useLocation
-import logo from "../images/logo.jpeg";
+import logo from "../images/DSPL.png";
 
 export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);

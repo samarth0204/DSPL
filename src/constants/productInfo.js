@@ -21,9 +21,9 @@ export const products = [
     image: turmeric,
     description: 'A vibrant yellow spice with a warm, earthy flavor and numerous health benefits.',
     usage: 'Used in curries, rice dishes, and for its anti-inflammatory properties in golden milk.',
-    packaging: '50 gms / 100 gms / 200 gms / 500 gms',
+    packaging: '10 Rs / 50 gms / 100 gms / 200 gms / 500 gms',
     extraInfo: 'Known for its antioxidant and anti-inflammatory properties.',
-    color: '#FFD93D'
+    color: '#CDA801'
   },
   { 
     id: 2, 
@@ -32,9 +32,9 @@ export const products = [
     image: coriander,
     description: 'A versatile spice with a slightly sweet, lemony flavor.',
     usage: 'Used in various cuisines, particularly in Indian, Middle Eastern, and Mexican dishes.',
-    packaging: '50 gms / 100 gms / 200 gms / 500 gms',
+    packaging: '10 Rs / 50 gms / 100 gms / 200 gms / 500 gms',
     extraInfo: 'Rich in antioxidants and may help lower blood sugar levels.',
-    color: '#6BCB77'
+    color: '#006C38'
   },
   { 
     id: 3, 
@@ -43,9 +43,9 @@ export const products = [
     image: redChilli,
     description: 'A warm, earthy spice with a slightly bitter, peppery flavor.',
     usage: 'Commonly used in Indian, Middle Eastern, and Mexican cuisines.',
-    packaging: '10 Rs / 100 gms / 200 gms / 500 gms',
+    packaging: '10 Rs / 50 gms / 100 gms / 200 gms / 500 gms / 1 kg ',
     extraInfo: 'Known for its digestive benefits and rich iron content.',
-    color: '#4D96FF'
+    color: '#D42D32'
   },
   { 
     id: 4, 
@@ -54,9 +54,9 @@ export const products = [
     image: garamM,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: ' 25 gms / 50 gms / 100 gms / 200 gms',
+    packaging: ' 50 gms / 100 gms / 200 gms / 500 gms ',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#215866'
   },
   { 
     id: 5, 
@@ -65,9 +65,9 @@ export const products = [
     image: chanaM,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: ' 50 gms / 100 gms / 200 gms / 500 gms',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#6E2066'
   },
   { 
     id: 6, 
@@ -76,9 +76,9 @@ export const products = [
     image: chatM,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: '50 gms / 100 gms / 200 gms / 500 gms',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#AE1B3B'
   },
   { 
     id: 7, 
@@ -87,9 +87,9 @@ export const products = [
     image: chickenM,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: '50 gms / 100 gms / 200 gms / 500 gms',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#662F2E'
   },
   { 
     id: 8, 
@@ -98,9 +98,9 @@ export const products = [
     image: muttonM,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: '/ 50 gms / 100 gms / 500 gms',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#87492A'
   },
   { 
     id: 9, 
@@ -109,9 +109,9 @@ export const products = [
     image: jeeravan,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: '50 gms / 100 gms / 500 gms',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#ECBA52'
   },
   { 
     id: 10, 
@@ -120,9 +120,9 @@ export const products = [
     image: kashmiriMirch,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: '50 gms / 100 gms / 500 gms',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#D60022'
   },
   { 
     id: 11, 
@@ -131,9 +131,9 @@ export const products = [
     image: kasuriMethi,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: '25 gms ',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#ADD03D'
   },
   { 
     id: 12, 
@@ -142,9 +142,9 @@ export const products = [
     image: SambharM,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: '50 gms / 100 gms / 500 gms',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#F5E502'
   },
   { 
     id: 13, 
@@ -153,9 +153,9 @@ export const products = [
     image: kitchenKing,
     description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
     usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '15 gms / 25 gms / 50 gms / 100 gms / 200 gms / Jar 1 kg',
+    packaging: '50 gms / 100 gms / 500 gms',
     extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
-    color: '#FF6B6B'
+    color: '#005551'
   },
 ];
 

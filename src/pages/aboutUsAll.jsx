@@ -1,177 +1,331 @@
-import React from 'react';
-import {
-  Box,
-  Typography,
-  Container,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  ListItemIcon,
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Container, Typography, Grid, Card, CardContent, CardMedia, 
+  Box, List, ListItem, ListItemIcon, ListItemText, Button,
+  Accordion, AccordionSummary, AccordionDetails, useMediaQuery
 } from '@mui/material';
-import { Public, People, Business } from '@mui/icons-material';
-import Footer from '../components/footer';
-import NavBar from '../components/navbar';
-import images from "../images/blackBg.jpg";
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import NatureIcon from '@mui/icons-material/Nature';
 
-const AboutUsAll = () => {
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import BoltIcon from '@mui/icons-material/Bolt';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Divider } from '@mui/material';
+import aboutspice from "../images/aboutSpicesImage - Copy.png";
+import NavBar from '../components/navbar';
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#ff1744',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+    background: {
+      default: '#000000',
+      paper: '#121212',
+    },
+  },
+  typography: {
+    fontFamily: 'Roboto, Arial, sans-serif',
+  },
+});
+
+const StyledCard = styled(Card)(({ theme }) => ({
+  transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'translateY(-10px)',
+    boxShadow: `0 4px 20px ${theme.palette.primary.main}`,
+  },
+}));
+
+const features = [
+  { 
+    icon: <EmojiEventsIcon />,
+    title: "Heritage of Excellence",
+    description: "Over half a century of expertise and dedication to crafting premium spices."
+  },
+  {
+    icon: <NatureIcon />,
+    title: "Commitment to Authenticity",
+    description: "We preserve the natural essence, color, and aroma of each spice."
+  },
+  {
+    icon: <VerifiedUserIcon />,
+    title: "Quality You Can Trust",
+    description: "Sourced from the finest origins, meticulously processed, and quality-checked at every step."
+  },
+  {
+    icon: <BoltIcon />,
+    title: "Innovation in Tradition",
+    description: "Combining age-old methods with modern standards to meet diverse culinary needs."
+  }
+];
+
+const timeline = [
+  { year: 1965, event: "Dhameja Spices founded" },
+  { year: 1980, event: "Expanded product line" },
+  { year: 1995, event: "Modernized production facilities" },
+  { year: 2010, event: "Achieved international quality certifications" },
+  { year: 2023, event: "Celebrating 58 years of excellence" }
+];
+
+const products = [
+  { name: "Premium Turmeric Powder", image: "/placeholder.svg?height=200&width=200&text=Turmeric" },
+  { name: "Organic Cardamom", image: "/placeholder.svg?height=200&width=200&text=Cardamom" },
+  { name: "Gourmet Black Pepper", image: "/placeholder.svg?height=200&width=200&text=Black+Pepper" },
+  { name: "Artisanal Garam Masala", image: "/placeholder.svg?height=200&width=200&text=Garam+Masala" }
+];
+
+function AboutUs() {
+  const [currentProductIndex, setCurrentProductIndex] = useState(0);
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentProductIndex((prevIndex) => (prevIndex + 1) % products.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
     <NavBar />
-    <Box sx={{ width: '100%', mt: 4, mb: 4, overflowY: 'auto', bgcolor: 'black', color: 'white' }}>
-      <Container maxWidth="lg">
-        <Box sx={{ mb: 4 }}>
-          <Typography variant="h2" gutterBottom>
-            About Us
-          </Typography>
-          <Grid container spacing={2}>
+    <ThemeProvider theme={theme}>
+    
+      <Box sx={{ bgcolor: 'background.default', color: 'text.primary', py: 8 }}>
+        <Container maxWidth="lg">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Typography variant="h2" align="center" gutterBottom>
+              About Dhameja Spices Pvt. Ltd.
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            <Typography variant="h6" align="center" paragraph>
+              Welcome to Dhameja Spices Pvt. Ltd., where tradition meets excellence in the art of spice manufacturing. Established as a trusted name in the spice industry, we bring to you a rich legacy of authentic, high-quality spices that has been nurtured through 58 years of family expertise.
+            </Typography>
+          </motion.div>
+
+          <Grid container spacing={4} sx={{ my: 4 }}>
             <Grid item xs={12} md={6}>
-              <Typography variant="body1">
-                HubSpot's company and culture are a lot like our product. They're 
-                crafted, not cobbled, for a delightful experience.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6} 
-              sx={{
-                bgcolor: 'transparent',
-                overflow: 'hidden',
-                clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%)' // Example of a custom curve shape
-              }}>
-              <img 
-                src= {`${images}`}
-                alt="Team" 
-                style={{ 
-                  width: '100%',
-                  height: '100%' ,
-                  objectFit: 'cover',
-                  clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%)'  // Match the same clip-path  
-                }}
-              />
-            </Grid>
-          </Grid>
-        </Box>
-
-        <Box sx={{ mb: 4 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={6}
-            sx={{
-              bgcolor: 'transparent',
-              overflow: 'hidden',
-              clipPath: 'polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)' // Example of a custom curve shape
-            }}>
-              
-              <img 
-                src={`${images}`} 
-                alt="Office" 
-                style={{ 
-                  width: '100%',
-                  height: '100%' ,
-                  objectFit: 'cover',
-                  clipPath: 'polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)'  // Match the same clip-path  
-                }}
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h4" gutterBottom>
-                Our Mission: Helping Millions of Organizations Grow Better
-              </Typography>
-              <Typography variant="body1">
-                We believe that our long-term success lies in growing better, not just growing bigger. And 
-                growing better means aligning the success of our business with the success of our customers and our community.
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
-
-        <Box sx={{ mb: 4 }}>
-          <Typography variant="h4" gutterBottom>
-            Our Story
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={8}>
-              <Typography variant="body1" paragraph>
-                In 2004, three MIT graduate students Brian Halligan and Dharmesh 
-                Shah noticed a shift in the way people shop and buy. Consumers were 
-                no longer tolerating interruptive bids for their attention — they'd 
-                gotten good at ignoring them.
-              </Typography>
-              <Typography variant="body1">
-                From this shift, a company was born: HubSpot. It was founded on 
-                "inbound", the notion that people don't want to be interrupted by 
-                marketers or harassed by salespeople — they want to be helped.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={4}
-            sx={{
-              bgcolor: 'transparent',
-              overflow: 'hidden',
-              clipPath: 'polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)' // Example of a custom curve shape
-            }}>
-              <img 
-                src={`${images}`} 
-                alt="Founder" 
-                style={{ 
-                  width: '100%',
-                  height: '100%' ,
-                  objectFit: 'cover',
-                  clipPath: 'polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)'  // Match the same clip-path  
-                }}
-              />
-            </Grid>
-          </Grid>
-        </Box>
-
-        <Box sx={{ mb: 4 }}>
-          <Typography variant="h4" gutterBottom>
-            HubSpot By the Numbers
-          </Typography>
-          <Grid container spacing={2}>
-            {[
-              { icon: <Public sx={{ color: 'white' }} />, title: '14 Global Offices', subtitle: 'Learn more' },
-              { icon: <People sx={{ color: 'white' }} />, title: '8,000+ Employees', subtitle: 'Learn more' },
-              { icon: <Business sx={{ color: 'white' }} />, title: '228,000+ Customers', subtitle: 'Learn more' },
-            ].map((item, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card sx={{ display: 'flex', justifyContent: 'flex-start', bgcolor: 'transparent', border: '1px solid white' }}>
-                  <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
-                    <ListItemIcon sx={{ minWidth: '40px', color: 'white' }}>{item.icon}</ListItemIcon>
-                    <Box>
-                      <Typography variant="h6" sx={{ color: 'white' }}>{item.title}</Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {item.subtitle}
-                      </Typography>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        <Box>
-          <Typography variant="h4" gutterBottom>
-            Voted #1 in 571 Reports
-          </Typography>
-          <Grid container spacing={2}>
-            {[1, 2, 3, 4, 5].map((item) => (
-              <Grid item xs={4} sm={2} key={item}>
-                <Card>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
+                <StyledCard>
                   <CardMedia
                     component="img"
-                    height="140"
-                    image={`/placeholder.svg?height=140&width=140&text=Award ${item}`}
-                    alt={`Award ${item}`}
+                    height="300"
+                    image={`${aboutspice}`}
+                    alt="Dhameja Spices Heritage"
                   />
-                </Card>
+                  <CardContent>
+                    <Typography variant="h5" component="div">
+                      Our Heritage
+                    </Typography>
+                  </CardContent>
+                </StyledCard>
+              </motion.div>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+              >
+                <Typography variant="h4" gutterBottom>
+                  Our Commitment to Quality
+                </Typography>
+                <Typography variant="body1">
+                  At Dhameja Spices, quality is more than just a promise—it is our tradition. Every spice we produce is carefully sourced, crafted, and inspected to ensure that it meets the highest standards. Our commitment to authenticity means that our spices retain their natural color and aroma, preserving the unique essence that has defined our family's legacy in spice manufacturing for decades.
+                </Typography>
+              </motion.div>
+            </Grid>
+          </Grid>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <Typography variant="h4" align="center" gutterBottom sx={{ mt: 8 }}>
+              Why Choose Dhameja Spices?
+            </Typography>
+          </motion.div>
+
+          <Grid container spacing={3} sx={{ mb: 8 }}>
+            {features.map((feature, index) => (
+              <Grid item xs={12} sm={6} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2 + index * 0.2, duration: 0.8 }}
+                >
+                  <Accordion>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      <ListItemIcon sx={{ color: 'primary.main' }}>
+                        {feature.icon}
+                      </ListItemIcon>
+                      <Typography variant="h6">{feature.title}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{feature.description}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </motion.div>
               </Grid>
             ))}
           </Grid>
-        </Box>
-      </Container>
-    </Box>
-    <Footer />
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2, duration: 0.8 }}
+          >
+            <Typography variant="h4" align="center" gutterBottom sx={{ mt: 8 }}>
+              Our Journey Through Time
+            </Typography>
+          </motion.div>
+  
+         
+          <Box sx={{ position: 'relative', my: 8 }}>
+            {/* Central Divider Line */}
+            <Divider
+  sx={{
+    position: 'absolute',
+    left: '50%',
+    top: 0,
+    bottom: 0,
+    border: '2px solid',
+    borderColor: {
+      xs: 'transparent', // For extra small screens
+      sm: 'black',      // For small screens
+      md: 'black',      // For medium screens
+      lg: 'primary.main' // For large screens and above
+    },
+    transform: 'translateX(-50%)', // Center the line
+    zIndex: 0,
+  }}
+/>
+
+            {timeline.map((item, index) => (
+              <Box key={index} sx={{ display: 'flex', mb: 4, flexDirection: { xs: 'column', md: 'row' } }}>
+                <motion.div
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 2.2 + index * 0.2, duration: 0.8 }}
+                  style={{
+                    flex: 1,
+                    display: 'flex',
+                    flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row' : 'row-reverse' },
+                    zIndex: 1, // Keep text above the divider
+                    alignItems: 'flex-start', // Ensure text aligns to the start
+                    paddingLeft: index % 2 === 0 ? 2 : 0,
+                    paddingRight: index % 2 === 0 ? 0 : 2,
+                    marginTop: { xs: 2, md: 0 }, // Add margin top for better spacing on mobile
+                    marginBottom: { xs: 2, md: 0 }, // Add margin bottom for better spacing on mobile
+                  }}
+                >
+                  {/* Adjusted Icon and Text Container */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: index % 2 === 0 ? 'flex-start' : 'flex-end',
+                      flex: '0 0 auto', // Prevent flex growth
+                      width: '100%', // Ensure it uses full width for alignment
+                    }}
+                  >
+                    {index % 2 === 0 && ( // Show icon on the left side of the text for left entries
+                      <Box
+                        sx={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: '50%',
+                          bgcolor: 'primary.main',
+                          marginRight: 1,
+                        }}
+                      />
+                    )}
+                    <Box
+                      sx={{
+                        px: 2,
+                        textAlign: index % 2 === 0 ? 'left' : 'right',
+                        maxWidth: '90%', // Prevent text from getting too close to the center line
+                      }}
+                    >
+                      <Typography variant="h6">{item.year}</Typography>
+                      <Typography>{item.event}</Typography>
+                    </Box>
+                    {index % 2 !== 0 && ( // Show icon on the right side of the text only for right entries
+                      <Box
+                        sx={{
+                          width: 20,
+                          height: 20,
+                          borderRadius: '50%',
+                          bgcolor: 'primary.main',
+                          marginLeft: 1,
+                        }}
+                      />
+                    )}
+                  </Box>
+                </motion.div>
+              </Box>
+            ))}
+          </Box>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3.4, duration: 0.8 }}
+          >
+            <Box textAlign="center" sx={{ my: 8 }}>
+              <Typography variant="h5" gutterBottom>
+                At Dhameja Spices, we don't just make spices;
+              </Typography>
+              <Typography variant="h4" color="primary" gutterBottom>
+                We create experiences that bring people together, adding richness and depth to every meal.
+              </Typography>
+            </Box>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 3.6, duration: 0.8 }}
+          >
+            <Box textAlign="center">
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                endIcon={<ArrowForwardIcon />}
+                href="#contact"
+              >
+                Contact Us
+              </Button>
+            </Box>
+          </motion.div>
+        </Container>
+      </Box>
+    </ThemeProvider>
   </>
   );
-};
+}
 
-export default AboutUsAll;
+export default AboutUs;

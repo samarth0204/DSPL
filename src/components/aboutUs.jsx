@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Import Link
 import img1 from "../images/aboutUs_1.png";
-import img3 from "../images/spice-variety-mix-plates-wallpaper-preview.jpg";
+import img3 from "../images/aboutUs_3.png";
 import img2 from "../images/aboutUs_2.png";
-import img4 from "../images/DSPL.png";
+import img4 from "../images/logo.jpeg";
 import "../stylesheets/aboutUs.css"; // Importing the CSS
 
 const AboutUs = () => {
