@@ -41,8 +41,8 @@ export const products = [
     name: 'Red Chilli ', 
     category: 'Pure Spices', 
     image: redChilli,
-    description: 'A warm, earthy spice with a slightly bitter, peppery flavor.',
-    usage: 'Commonly used in Indian, Middle Eastern, and Mexican cuisines.',
+    description: 'Renowned for its ability to enhance flavor while offering health benefits such as boosting metabolism and providing antioxidants.',
+    usage: 'Ideal for use in salsas, stews, and marinades, chilli powder is perfect for adding a spicy kick to any recipe.',
     packaging: '10 Rs / 50 gms / 100 gms / 200 gms / 500 gms / 1 kg ',
     extraInfo: 'Known for its digestive benefits and rich iron content.',
     color: '#D42D32'
@@ -52,10 +52,9 @@ export const products = [
     name: 'Garam Masala', 
     category: 'Blended Spices', 
     image: garamM,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: ' 50 gms / 100 gms / 200 gms / 500 gms ',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
+    description: 'A fragrant blend of ground spices that captures the essence of Indian cuisine. Known for its warm, complex flavor profile, garam masala enhances dishes with a rich aroma and depth.',
+    packaging: ' 50 gms / 100 gms / 500 gms ',
+    usage: 'Perfect for curries, stews, and roasted meats, garam masala is often added at the end of cooking to preserve its aromatic qualities and elevate your culinary creations.',
     color: '#215866'
   },
   { 
@@ -63,10 +62,9 @@ export const products = [
     name: 'Chana Masala', 
     category: 'Blended Spices', 
     image: chanaM,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: ' 50 gms / 100 gms / 200 gms / 500 gms',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
+    description: ' Chana masala combines aromatic spices like cumin, coriander, and garam masala, resulting in a savory dish that’s both hearty and nutritious, packed with protein and fiber.',
+    packaging: ' 50 gms / 100 gms / 500 gms',
+    usage: 'Ideal for curries, stews, and as a base for chickpea salads, chana masala adds a delightful depth of flavor to your dishes. Serve it with rice, naan, or as a standalone dish for a satisfying meal.',
     color: '#6E2066'
   },
   { 
@@ -74,10 +72,10 @@ export const products = [
     name: 'Chat Masala', 
     category: 'Blended Spices', 
     image: chatM,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '50 gms / 100 gms / 200 gms / 500 gms',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
+    description: 'A tangy and zesty spice blend that captures the essence of Indian street food. This vibrant mix combines ingredients like dried mango powder, cumin, coriander, and black salt to create a burst of flavor that elevates any dish.',
+    usage: 'Sprinkle chaat masala over fruits, salads, and savory snacks like papdi or bhel puri for an added zing. It’s also perfect for seasoning fried or roasted vegetables, enhancing their natural flavors and making your dishes irresistible.',
+    packaging: '50 gms / 100 gms / 500 gms',
+   
     color: '#AE1B3B'
   },
   { 
@@ -85,10 +83,9 @@ export const products = [
     name: 'Chicken Masala', 
     category: 'Blended Spices', 
     image: chickenM,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '50 gms / 100 gms / 200 gms / 500 gms',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
+    description: 'Chicken masala is cherished for its ability to transform simple chicken recipes into mouthwatering meals, infusing them with a delightful combination of warmth and spice.',
+    usage: 'Use chicken masala to marinate chicken before grilling, roasting, or frying. It is also perfect for curries, stews, and biryanis, adding a fragrant and flavorful touch that makes every dish a culinary delight.',
+    packaging: '50 gms / 100 gms / 500 gms',
     color: '#662F2E'
   },
   { 
@@ -96,10 +93,9 @@ export const products = [
     name: 'Mutton Masala', 
     category: 'Blended Spices', 
     image: muttonM,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
-    packaging: '/ 50 gms / 100 gms / 500 gms',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
+    description: 'An exquisite blend of spices specifically designed to complement the rich, succulent flavors of mutton. ',
+    usage: 'Ideal for curries, stews, and slow-cooked dishes, mutton masala can be used to marinate mutton before cooking or added to the pot for a robust flavor. It is perfect for traditional dishes like Rogan Josh, Mutton Biryani, and Mutton Vindaloo, providing a delicious and aromatic experience.',
+    packaging: '50 gms / 100 gms / 500 gms',
     color: '#87492A'
   },
   { 
@@ -107,10 +103,9 @@ export const products = [
     name: 'Jeeravan', 
     category: 'Blended Spices', 
     image: jeeravan,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
+    description: 'A fragrant blend of cumin and aromatic spices, Jeeravan adds a warm, nutty flavor to dishes. Perfect for enhancing the taste of vegetables, meats, and lentils, it is a versatile seasoning in Indian cuisine.',
+    usage: 'Ideal for seasoning curries, marinades, and rice dishes, Jeeravan enhances the flavor of lentils and vegetables, making it a staple in many Indian recipes. Use it to sprinkle over roasted or grilled dishes for an extra kick of flavor.',
     packaging: '50 gms / 100 gms / 500 gms',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
     color: '#ECBA52'
   },
   { 
@@ -118,10 +113,9 @@ export const products = [
     name: 'Kashmiri Mirch', 
     category: 'Blended Spices', 
     image: kashmiriMirch,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
+    description: 'A vibrant red chili powder known for its mild heat and rich color, Kashmiri Mirch adds a beautiful hue to dishes without overwhelming spiciness.',
+    usage: 'Perfect for curries, tandoori dishes, and marinades, Kashmiri Mirch enhances the color and flavor of dishes while maintaining a mild heat level. Sprinkle it on top of dishes for added visual appeal and a subtle warmth.',
     packaging: '50 gms / 100 gms / 500 gms',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
     color: '#D60022'
   },
   { 
@@ -129,10 +123,9 @@ export const products = [
     name: 'Kasuri Methi', 
     category: 'Blended Spices', 
     image: kasuriMethi,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
+    description: 'Dried fenugreek leaves with a distinct, aromatic flavor, Kasuri Methi adds a unique depth to various dishes. Its slightly bitter yet earthy taste enhances the overall flavor profile, making it a staple in Indian cooking.',
+    usage: 'Ideal for seasoning curries, lentil dishes, and bread, Kasuri Methi can be crushed and sprinkled in during cooking or used as a garnish to elevate the taste and aroma of your favorite meals.',
     packaging: '25 gms ',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
     color: '#ADD03D'
   },
   { 
@@ -140,10 +133,9 @@ export const products = [
     name: 'Sambhar Masala', 
     category: 'Blended Spices', 
     image: SambharM,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
+    description: 'A fragrant blend of spices that includes coriander, cumin, and mustard seeds, Sambhar Masala is essential for creating the beloved South Indian lentil stew. ',
+    usage: 'Perfect for preparing sambhar, this masala can also be used to enhance vegetable curries, rice dishes, and soups, providing a warm and aromatic touch to your culinary creations.',
     packaging: '50 gms / 100 gms / 500 gms',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
     color: '#F5E502'
   },
   { 
@@ -151,10 +143,9 @@ export const products = [
     name: 'Kitchen King', 
     category: 'Blended Spices', 
     image: kitchenKing,
-    description: 'A select blend of 13 spices go into this grand old universal taste enhancer. Being chilli based, it provides an exotic red gravy to dishes.',
-    usage: 'It is used essentially for preparing vegetarian dishes requiring a gravy. Gujaratis and Marwaris normally use it in lentils (dal) and for filling in snacks such as samosa, usal, patra, farsan etc.',
+    description: 'A versatile spice blend that combines a medley of aromatic spices, Kitchen King Masala adds depth and flavor to a variety of dishes. Its balanced profile makes it a favorite for home cooks and professional chefs alike.',
+    usage: 'Ideal for curries, vegetable dishes, and rice preparations, this masala enhances the taste of both vegetarian and non-vegetarian recipes, making it a staple in every kitchen.',
     packaging: '50 gms / 100 gms / 500 gms',
-    extraInfo: 'It is widely used all over India on account of its being a less pungent garam masala. Fennel, Tejpatta (Cinnamon leaves) and Trifala imparts a cooling effect to this blend.',
     color: '#005551'
   },
 ];

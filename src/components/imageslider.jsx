@@ -32,21 +32,21 @@ const TextOverlay = styled(Box)`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center; // Center the text vertically
   padding: 0 5%;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
+
+  @media (max-width: 768px) {
+    justify-content: center; // Center the text horizontally on mobile
+  }
 `;
 
 const TextContent = styled(Box)`
   color: white;
-  text-align: left;
+  text-align: left; // Center text for mobile view
   width: 100%;
   overflow: hidden;
-
-  @media (max-width: 768px) {
-    text-align: center;
-  }
 `;
 
 const ImageSlider = () => {
@@ -96,7 +96,7 @@ const ImageSlider = () => {
               fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem', lg: '4rem' }, 
               fontWeight: 'bold', 
               marginBottom: { xs: 1, sm: 2 },
-              maxWidth: isMobile ? '100%' : '70%'
+              maxWidth: '100%' // Change maxWidth to 100% for better mobile view
             }}
           >
             Divydamini Masale
@@ -106,7 +106,7 @@ const ImageSlider = () => {
             sx={{ 
               fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem', lg: '2.5rem' }, 
               marginBottom: { xs: 1, sm: 2 },
-              maxWidth: isMobile ? '100%' : '80%'
+              maxWidth: '100%' // Change maxWidth to 100% for better mobile view
             }}
           >
             The Real Taste of Spices
@@ -115,7 +115,7 @@ const ImageSlider = () => {
             variant="h3" 
             sx={{ 
               fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem', lg: '1.8rem' },
-              maxWidth: isMobile ? '100%' : '90%',
+              maxWidth: '100%', // Change maxWidth to 100% for better mobile view
               marginBottom: { xs: 1, sm: 2 },
             }}
           >
@@ -125,7 +125,7 @@ const ImageSlider = () => {
             variant="h4" 
             sx={{ 
               fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem', lg: '1.8rem' },
-              maxWidth: isMobile ? '100%' : '90%'
+              maxWidth: '100%' // Change maxWidth to 100% for better mobile view
             }}
           >
             Discover the unparalleled quality of our exquisite spice blends

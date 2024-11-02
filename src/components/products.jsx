@@ -45,34 +45,7 @@ const ViewAllButton = styled(Button)(({ theme }) => ({
     zIndex: 1,
   },
 }));
-/*
-const products = [
-  {
-    id: '1',
-    name: 'Turmeric Powder',
-    description: 'A fine-ground Turmeric Powder or Haldi Powder is made with Salem Turmeric...',
-    color: '#FFC300',
-    packingSizes: ['100 gms', '200 gms', '500 gms', '1 kg'],
-    image: haldi,
-  },
-  {
-    id: '2',
-    name: 'Coriander Powder',
-    description: 'Freshly ground coriander powder...',
-    color: '#2ECC71',
-    packingSizes: ['100 gms', '200 gms', '500 gms', '1 kg'],
-    image: dhaniya,
-  },
-  {
-    id: '3',
-    name: 'Red Chilli Powder',
-    description: 'Vibrant red chilli powder...',
-    color: '#E74C3C',
-    packingSizes: ['100 gms', '200 gms', '500 gms', '1 kg'],
-    image: mirchi,
-  },
-];
-*/
+
 const slideVariants = {
   enter: (direction) => ({
     x: direction > 0 ? '100%' : '-100%',
@@ -166,7 +139,7 @@ export default function MUICoolTextSlider() {
       aspectRatio: '1',
       position: 'relative',
       order: { xs: 1, md: 1 }, // Set order to 1 for the left side
-      marginTop: { xs: 0, md: -5 },
+      marginTop: { xs: 0, md: 0 },
       marginRight: { xs: 0, md: -10 }, // Adjust margin if necessary
       zIndex: { xs: 0, md: 1 },
       bgcolor: 'transparent',
@@ -183,7 +156,7 @@ export default function MUICoolTextSlider() {
           height: '100%',
           objectFit: 'contain',
           top: '0%',
-          left: '10%',
+          left: '0%',
           mixBlendMode: 'multiply',
           background: 'transparent',
         }}

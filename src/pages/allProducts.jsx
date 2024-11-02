@@ -118,16 +118,21 @@ const AllProducts = () => {
               </IconButton>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={4}>
-                  <Box sx={{ backgroundColor: 'black', padding: '16px' }}>
+                  <Box sx={{ backgroundColor: 'black', padding: '16px', display: 'flex', justifyContent: 'center'}}>
                     <BlendedImage 
                       src={selectedProduct?.image} 
                       alt={selectedProduct?.name} 
+                      sx={{
+                        width: { xs: '40%', sm: '100%' }, // 80% width on extra small screens, 100% on small and above
+                        height: 'auto',
+                        margin: 'auto'
+                      }}
                     />
                   </Box>
                   <Button 
                     variant="contained" 
                     fullWidth 
-                    sx={{ mt: 2, bgcolor: selectedProduct?.color, '&:hover': { bgcolor: `${selectedProduct?.color}CC` } }}
+                    sx={{color:'transparent', mt: 2, bgcolor: selectedProduct?.color, '&:hover': { bgcolor: `${selectedProduct?.color}CC` } }}
                   >
                     Add to Cart
                   </Button>

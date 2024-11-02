@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   Container, Typography, Grid, Card, CardContent, CardMedia, 
-  Box, List, ListItem, ListItemIcon, ListItemText, Button,
-  Accordion, AccordionSummary, AccordionDetails, useMediaQuery
+  Box, ListItemIcon, Button,
+  Accordion, AccordionSummary, AccordionDetails,
 } from '@mui/material';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -16,6 +16,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Divider } from '@mui/material';
 import aboutspice from "../images/aboutSpicesImage - Copy.png";
 import NavBar from '../components/navbar';
+import {Link} from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
@@ -32,7 +33,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, Arial, sans-serif',
+    fontFamily: 'Roboto, Arial, sans-serif'
   },
 });
 
@@ -75,23 +76,10 @@ const timeline = [
   { year: 2023, event: "Celebrating 58 years of excellence" }
 ];
 
-const products = [
-  { name: "Premium Turmeric Powder", image: "/placeholder.svg?height=200&width=200&text=Turmeric" },
-  { name: "Organic Cardamom", image: "/placeholder.svg?height=200&width=200&text=Cardamom" },
-  { name: "Gourmet Black Pepper", image: "/placeholder.svg?height=200&width=200&text=Black+Pepper" },
-  { name: "Artisanal Garam Masala", image: "/placeholder.svg?height=200&width=200&text=Garam+Masala" }
-];
+
 
 function AboutUs() {
-  const [currentProductIndex, setCurrentProductIndex] = useState(0);
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentProductIndex((prevIndex) => (prevIndex + 1) % products.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
+ 
 
   return (
     <>
@@ -309,17 +297,19 @@ function AboutUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 3.6, duration: 0.8 }}
           >
-            <Box textAlign="center">
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                endIcon={<ArrowForwardIcon />}
-                href="#contact"
+          <Box textAlign="center">
+          <Link to="/contact" style={{ textDecoration: 'none' }}>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              endIcon={<ArrowForwardIcon />}
+              href="#contact"
               >
-                Contact Us
-              </Button>
-            </Box>
+              Contact Us
+            </Button>
+            </Link>
+          </Box>
           </motion.div>
         </Container>
       </Box>
