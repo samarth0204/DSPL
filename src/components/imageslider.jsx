@@ -123,12 +123,12 @@ const ImageSlider = () => {
                     maxWidth: '100%' // Change maxWidth to 100% for better mobile view
                   }}
                 > 
-                  Divydamini Masale
+                  DivyDamini Masale
                 </Typography>
                 <Typography 
                   variant="h2" 
                   sx={{ 
-                    fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem', lg: '2.5rem' }, 
+                    fontSize: { xs: '1rem', sm: '1.2rem', md: '1.7rem', lg: '2.2rem' }, 
                     marginBottom: { xs: 1, sm: 2 },
                     maxWidth: '100%' // Change maxWidth to 100% for better mobile view
                   }}
@@ -138,7 +138,7 @@ const ImageSlider = () => {
                 <Typography 
                   variant="h3" 
                   sx={{ 
-                    fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem', lg: '1.8rem' },
+                    fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.3rem', lg: '1.8rem' },
                     maxWidth: '100%', // Change maxWidth to 100% for better mobile view
                     marginBottom: { xs: 1, sm: 2 },
                   }}
@@ -148,7 +148,7 @@ const ImageSlider = () => {
                 <Typography 
                   variant="h4" 
                   sx={{ 
-                    fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem', lg: '1.8rem' },
+                    fontSize: { xs: '0.9rem', sm: '1.1rem', md: '1.3rem', lg: '1.8rem' },
                     maxWidth: '100%' // Change maxWidth to 100% for better mobile view
                   }}
                 >

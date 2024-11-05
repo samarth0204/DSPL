@@ -29,15 +29,12 @@
     position: absolute;
     transition: transform 0.5s ease-in-out; /* Default transition */
     background-color: transparent;
-   
 }
 
 /* Positioning each image differently for overlap effect */
 .about-images img:nth-child(1) {
     top: -10;
     left: 0;
-    
-     /* Red border with 80% opacity */
     opacity: 0.6; /* Slightly transparent */
     z-index: 2;
 }
@@ -45,24 +42,19 @@
 .about-images img:nth-child(2) {
     top: 10%;
     left: 40%;
-   
-    /* Yellow border with 90% opacity */
     opacity: 0.85; /* Less transparent */
 }
 
 .about-images img:nth-child(3) {
     top: 50%;
     left: 50%;
-   
-     /* Red border with 70% opacity */
     opacity: 0.8; /* More transparent */
 }
 
 .about-images img:nth-child(4) {
     top: 60%;
     left: 35%;
-    
-    opacity: 1; /* Slightly transparent */
+    opacity: 1; /* Fully opaque */
     z-index: 4;
 }
 
@@ -123,26 +115,68 @@
     position: relative;
     z-index: 1; /* Set z-index higher than the before pseudo-element */
 }
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .about-us {
         flex-direction: column; /* Stack elements vertically */
         padding: 20px; /* Adjust padding */
-        height: 'auto'; /* Allow height to adjust */
-       width: 80%
-
+        height: auto; /* Allow height to adjust */
+        width: 100%;
     }
 
     .about-images {
         width: 100%; /* Full width for better visibility */
         margin: 20% 0; 
-       /* Adjust top and bottom margins for spacing */
+        position: relative; /* Keep images in relative position */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .about-images img {
-        width: 50%; /* Ensure images are responsive */
-        height: auto; /* Maintain aspect ratio */
-        transition: transform 0.1s ease-in-out; /* Keep hover effect */
+    /* Fourth image centered */
+    .about-images img:nth-child(4) {
+        position: relative;
+        top: 15%;
+        left: 0;
+        z-index: 5; /* Bring it above other images */
+        opacity: 1; /* Full opacity */
+        width: 60%; /* Make it slightly larger */
+    }
+
+    /* Adjust the positioning of the other images around the center image */
+    .about-images img:nth-child(1),
+    .about-images img:nth-child(2),
+    .about-images img:nth-child(3) {
+        position: absolute;
+        width: 40%; /* Smaller than the central image */
+       
+    }
+
+    /* First image on the top-left */
+    .about-images img:nth-child(1) {
+        top: 20%;
+        left: 5%;
+        z-index: 2;
+        opacity: 0.7;
+    }
+
+    /* Second image on the right */
+    .about-images img:nth-child(2) {
+        top: 30%;
+        right: 0%;
+        z-index: 1;
+        opacity: 0.5;
+        
+    }
+
+    /* Third image on the bottom-left */
+    .about-images img:nth-child(3) {
+        bottom: -40%;
+        left: 50%;
+        z-index: 3;
+        opacity: 0.6;
+       
     }
 
     .about-text {
@@ -153,7 +187,7 @@
 
     .about-text h2 {
         font-size: 2.2rem; /* Slightly larger for better readability */
-        margin-bottom: 15px; /* Space below heading */
+         /* Space below heading */
     }
 
     .about-text p {
@@ -163,7 +197,7 @@
 
     .learn-more-btn {
         width: 100%; /* Full width for button */
-        margin-top: 20px; /* Space above button */
+        margin-top: 10px; /* Space above button */
         padding: 12px; /* Increase padding for touch targets */
     }
 }
