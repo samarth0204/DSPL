@@ -126,7 +126,9 @@
     .about-us {
         flex-direction: column; /* Stack elements vertically */
         padding: 20px; /* Adjust padding */
-        height: auto; /* Allow height to adjust */
+        height: 'auto'; /* Allow height to adjust */
+       width: 80%
+
     }
 
     .about-images {

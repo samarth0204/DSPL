@@ -15,7 +15,6 @@ function Home() {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '10%', // Top margin for all pages (adjust as needed)
     marginBottom: '10%', // Bottom margin for all pages (adjust as needed)
   };
 
@@ -47,7 +46,7 @@ function Home() {
                 width: '100%',
                 maxWidth: '100%',
                 padding: { xs: '40px', sm: '30px', md: '40px' }, // Adjust padding
-                height: 'auto',
+                height: 'fit-content',
                 marginBottom: '60%', // Increased bottom margin to avoid clipping
               }}
             />
@@ -61,8 +60,9 @@ function Home() {
               style={{
                 width: '100%',
                 maxWidth: '100%',
-                height: 'auto',
-                padding: { xs: '10%', sm: '5%', md: '3%' }, // Adjust padding for small screens
+                height: 'fit-content',
+                padding: { xs: '0', sm: '0', md: '3%' }, // Adjust padding for small screens
+                
               }}
             />
           </Animator>
@@ -70,7 +70,10 @@ function Home() {
 
         {/* Footer Section */}
         
-          <div >
+          <div
+          style={{
+            marginTop:'10%'
+          }} >
             <Footer />
           </div>
        
