@@ -90,7 +90,7 @@ const ContactUs = () => {
         <MapContainer center={center} zoom={15} style={{ height: '100%', width: '100%' }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            
           />
           {/* Custom marker with web image */}
           <Marker position={center} icon={customIcon}>
@@ -107,7 +107,7 @@ const ContactUs = () => {
           <Grid item xs={12} md={8}>
             <Paper elevation={3} sx={{ p: 4 }}>
               <Typography variant="h4" gutterBottom>
-                Know More About India's Largest Spice Company
+                Know More About Dhameja Spices
               </Typography>
               <Typography variant="subtitle2" gutterBottom>
                 * Indicates Mandatory Fields

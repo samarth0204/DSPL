@@ -69,11 +69,11 @@ const features = [
 ];
 
 const timeline = [
-  { year: 1965, event: "Dhameja Spices founded" },
-  { year: 1980, event: "Expanded product line" },
-  { year: 1995, event: "Modernized production facilities" },
-  { year: 2010, event: "Achieved international quality certifications" },
-  { year: 2023, event: "Celebrating 58 years of excellence" }
+  { year: 2014, event: "Dhameja Spices founded" },
+  { year: 2021, event: "Expanded product line" },
+  { year: 2022, event: "Modernized production facilities" },
+  { year: 2023, event: "Achieved international quality certifications" },
+  { year: 2024, event: "Celebrating 10 years of excellence" }
 ];
 
 

@@ -55,7 +55,7 @@ const AboutUs = () => {
     src={img4}
     alt="image4"
     style={{
-      background: 'black',
+      
       transform: `translateY(${scrollY * -0.04}px) scale(${1 - scrollY * 0.00008})`,
       opacity: 1 - Math.max(0, (scrollY - 900) * 0.0008), // Start fading after 300px of scrolling
       transition: 'transform 0.3s ease-out, opacity 0.3s ease-out'

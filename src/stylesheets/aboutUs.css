@@ -19,6 +19,7 @@
     position: relative;
     width: 50%; /* Increased size for better visibility */
     height: 15rem;
+    background-color: transparent;
 }
 
 /* Each image will be absolutely positioned with overlap */
@@ -27,14 +28,15 @@
     height: auto;
     position: absolute;
     transition: transform 0.5s ease-in-out; /* Default transition */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+   
 }
 
 /* Positioning each image differently for overlap effect */
 .about-images img:nth-child(1) {
     top: -10;
     left: 0;
-    background-color: transparent;
+    
      /* Red border with 80% opacity */
     opacity: 0.6; /* Slightly transparent */
     z-index: 2;
@@ -43,7 +45,7 @@
 .about-images img:nth-child(2) {
     top: 10%;
     left: 40%;
-    background-color: transparent;
+   
     /* Yellow border with 90% opacity */
     opacity: 0.85; /* Less transparent */
 }
@@ -51,7 +53,7 @@
 .about-images img:nth-child(3) {
     top: 50%;
     left: 50%;
-    background-color: transparent;
+   
      /* Red border with 70% opacity */
     opacity: 0.8; /* More transparent */
 }
@@ -59,7 +61,7 @@
 .about-images img:nth-child(4) {
     top: 60%;
     left: 35%;
-    background-color: transparent;
+    
     opacity: 1; /* Slightly transparent */
     z-index: 4;
 }
@@ -86,7 +88,7 @@
 /* Learn More Button with hover animation */
 .learn-more-btn {
     padding: 10px 30px;
-    background-color: black;
+    background-color: transparent;
     color: white;
     border: 2px solid white; /* Add a white border */
     font-size: 1rem;

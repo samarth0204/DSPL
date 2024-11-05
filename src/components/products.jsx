@@ -112,6 +112,8 @@ export default function MUICoolTextSlider() {
           bgcolor: 'background.default',
           p: 4,
           position: 'relative',
+          width: {sx:'50%', sm:'50%', md:'100%', lg:'100%'},
+          height:'fit-content'
         }}
       >
         {/* "Products" Heading */}
@@ -239,17 +241,18 @@ export default function MUICoolTextSlider() {
             <IconButton onClick={prevProduct} sx={{ color: 'white' }}>
               <ChevronLeftIcon fontSize="large" />
             </IconButton>
-            <IconButton onClick={nextProduct} sx={{ color: 'white' }}>
-              <ChevronRightIcon fontSize="large" />
-            </IconButton>
-          </Box>
-          
-          {/* ViewAllButton positioned exactly below navigation buttons */}
+            {/* ViewAllButton positioned exactly below navigation buttons */}
           <Link to="/all-products" style={{ textDecoration: 'none' }}>
             <ViewAllButton variant="contained">
               <span>View All</span>
             </ViewAllButton>
           </Link>
+            <IconButton onClick={nextProduct} sx={{ color: 'white' }}>
+              <ChevronRightIcon fontSize="large" />
+            </IconButton>
+          </Box>
+          
+          
         </Box>
       </Box>
     </ThemeProvider>
