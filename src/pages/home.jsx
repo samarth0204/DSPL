@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollContainer, ScrollPage, Animator, batch,  FadeIn, MoveIn, StickyIn, ZoomIn } from "react-scroll-motion";
+import { ScrollContainer, ScrollPage, Animator, batch, FadeIn, MoveIn, StickyIn, ZoomIn } from "react-scroll-motion";
 import Navbar from '../components/navbar';
 import VerticalSlider from '../components/slider';
 import Footer from '../components/footer';
@@ -9,63 +9,71 @@ import MUICoolTextSlider from '../components/products';
 const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 
 function Home() {
+  // Common margin styles for each ScrollPage
+  const pageStyle = {
+    minHeight: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '10%', // Top margin for all pages (adjust as needed)
+    marginBottom: '10%', // Bottom margin for all pages (adjust as needed)
+  };
+
   return (
     <>
       <Navbar />
       <ScrollContainer>
         {/* Vertical Slider Section */}
-        <VerticalSlider />
+        <ScrollPage>
+          <div style={pageStyle}>
+            <VerticalSlider />
+          </div>
+        </ScrollPage>
 
         {/* About Us Section */}
-        <ScrollPage page={2} >
+        <ScrollPage page={2}>
           <Animator
             animation={ZoomInScrollOut}
             style={{
-              height: '100%', 
+              height: '100%',
               width: '100%',
-              marginTop: { xs: '10%', sm: '20%', md: '30%', lg: '5%' }, // Responsive margins
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
             }}
           >
-            <AboutUs 
+            <AboutUs
               style={{
-                width: '100%', 
-                maxWidth: '100%', 
-                padding: { xs: '20px', sm: '30px', md: '40px' }, 
-                height: { xs: 'auto', md: 'auto' }, // Increase height for larger screens
-                marginBottom:'50%'
-              }} 
+                width: '100%',
+                maxWidth: '100%',
+                padding: { xs: '40px', sm: '30px', md: '40px' }, // Adjust padding
+                height: 'auto',
+                marginBottom: '60%', // Increased bottom margin to avoid clipping
+              }}
             />
           </Animator>
         </ScrollPage>
 
         {/* Product Slider Section */}
-        <ScrollPage page={3} >
+        <ScrollPage page={3}>
           <Animator animation={MoveIn(-1000, 0)}>
-            <MUICoolTextSlider 
-              style={{ 
-                width: '100%', 
-                maxWidth: '100%', 
-                height: 'auto', 
+            <MUICoolTextSlider
+              style={{
+                width: '100%',
+                maxWidth: '100%',
+                height: 'auto',
                 padding: { xs: '10%', sm: '5%', md: '3%' }, // Adjust padding for small screens
-              }} 
+              }}
             />
           </Animator>
         </ScrollPage>
 
         {/* Footer Section */}
-        <ScrollPage page={4}>
-          <Footer 
-            style={{ 
-              width: '100%', 
-              maxWidth: '1200px', 
-              padding: { xs: '10%', sm: '5%', md: '3%' }, // Responsive padding
-              textAlign: 'center', // Ensure content centers on small screens
-            }} 
-          />
-        </ScrollPage>
+        
+          <div >
+            <Footer />
+          </div>
+       
       </ScrollContainer>
     </>
   );
