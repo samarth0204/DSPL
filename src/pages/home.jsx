@@ -15,7 +15,7 @@ function Home() {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: '10%', // Bottom margin for all pages (adjust as needed)
+    marginBottom: '20%', // Bottom margin for all pages (adjust as needed)
   };
 
   return (
@@ -31,6 +31,7 @@ function Home() {
 
         {/* About Us Section */}
         <ScrollPage page={2}>
+          
           <Animator
             animation={ZoomInScrollOut}
             style={{
@@ -45,12 +46,13 @@ function Home() {
               style={{
                 width: '100%',
                 maxWidth: '100%',
-                padding: { xs: '40px', sm: '30px', md: '40px' }, // Adjust padding
+                margin: { xs: '60px', sm: '70px', md: '40px' }, // Adjust padding
                 height: 'fit-content',
-                marginBottom: '60%', // Increased bottom margin to avoid clipping
+                
               }}
             />
           </Animator>
+         
         </ScrollPage>
 
         {/* Product Slider Section */}

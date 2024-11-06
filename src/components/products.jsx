@@ -112,8 +112,10 @@ export default function MUICoolTextSlider() {
           bgcolor: 'background.default',
           p: 4,
           position: 'relative',
-          width: {sx:'50%', sm:'50%', md:'100%', lg:'100%'},
-          height:'fit-content'
+          width: {sx:'80%', sm:'80%', md:'100%', lg:'100%'},
+          height:'fit-content',
+          bottomMargin: {sx: '10%', sm:'10%', md:'100%', lg:'100%'}
+
         }}
       >
         {/* "Products" Heading */}

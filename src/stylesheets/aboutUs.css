@@ -35,7 +35,7 @@
 .about-images img:nth-child(1) {
     top: -10;
     left: 0;
-    opacity: 0.6; /* Slightly transparent */
+    opacity: 0.9; /* Slightly transparent */
     z-index: 2;
 }
 
@@ -73,7 +73,7 @@
 .about-text p {
     font-size: 1.1rem;
     line-height: 1.5;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     color: white;  /* White text */
 }
 
@@ -120,8 +120,9 @@
 @media (max-width: 768px) {
     .about-us {
         flex-direction: column; /* Stack elements vertically */
-        padding: 20px; /* Adjust padding */
-        height: auto; /* Allow height to adjust */
+        padding-bottom: 10px; /* Adjust padding */
+        margin-bottom: 10%;
+        height: fit-content; /* Allow height to adjust */
         width: 100%;
     }
 
@@ -137,7 +138,7 @@
     /* Fourth image centered */
     .about-images img:nth-child(4) {
         position: relative;
-        top: 15%;
+        top: 30%;
         left: 0;
         z-index: 5; /* Bring it above other images */
         opacity: 1; /* Full opacity */
@@ -163,7 +164,7 @@
 
     /* Second image on the right */
     .about-images img:nth-child(2) {
-        top: 30%;
+        top: 50%;
         right: 0%;
         z-index: 1;
         opacity: 0.5;
@@ -196,9 +197,9 @@
     }
 
     .learn-more-btn {
-        width: 100%; /* Full width for button */
-        margin-top: 10px; /* Space above button */
-        padding: 12px; /* Increase padding for touch targets */
+        width: 80%; /* Full width for button */
+        
+        padding: 5px; /* Increase padding for touch targets */
     }
 }
 
