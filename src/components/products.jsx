@@ -119,7 +119,14 @@ export default function MUICoolTextSlider() {
         }}
       >
         {/* "Products" Heading */}
-        <Typography variant="h2" component="h2" gutterBottom sx={{ color: 'white', mb: 4 }}>
+        <Typography
+         variant="h2" 
+         component="h2"
+          gutterBottom sx={{ 
+          color: 'white',
+           mb: 0,
+          fontSize: {sx: '0.8rem', sm:'1rem', md:'1.5rem',lg:'4rem'}
+           }}>
           Products
         </Typography>
         
@@ -144,7 +151,7 @@ export default function MUICoolTextSlider() {
       position: 'relative',
       order: { xs: 1, md: 1 }, // Set order to 1 for the left side
       marginTop: { xs: 0, md: 0 },
-      marginRight: { xs: 0, md: -10 }, // Adjust margin if necessary
+      marginRight: { xs: 0, md: -10, lg:'-10%' }, // Adjust margin if necessary
       zIndex: { xs: 0, md: 1 },
       bgcolor: 'transparent',
     }}
@@ -165,7 +172,7 @@ export default function MUICoolTextSlider() {
           background: 'transparent',
         }}
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 , rotate: {xs: 'none', md: 'none', lg: '-5' } }}
+        animate={{ opacity: 1, scale: 1 , rotate:-5 }}
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.5 }}
       />
@@ -211,7 +218,7 @@ export default function MUICoolTextSlider() {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: theme.spacing(3),
+            padding: { xs: 1, md: 2, lg: 6 },
             textAlign: 'center',
             transform: 'translateY(-20%)',
           }}

@@ -128,7 +128,7 @@
 
     .about-images {
         width: 100%; /* Full width for better visibility */
-        margin: 20% 0; 
+        margin-top: 10px; 
         position: relative; /* Keep images in relative position */
         display: flex;
         justify-content: center;
