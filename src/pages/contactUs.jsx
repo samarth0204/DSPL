@@ -86,7 +86,7 @@ const ContactUs = () => {
     <>
       <NavBar />
       {/* Map Section */}
-      <Box sx={{ width: '100%', height: '60vh', mb: 4 }}>
+      <Box sx={{ width: '100%', height: '40vh', mb: 4 }}>
         <MapContainer center={center} zoom={15} style={{ height: '100%', width: '100%' }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

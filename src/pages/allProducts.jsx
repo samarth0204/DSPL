@@ -115,7 +115,7 @@ const AllProducts = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Typography variant="h2" component="h1" gutterBottom align="center" sx={{ color: 'white', mb: 6, fontWeight: 'bold', marginTop: '5%' }}>
-              Premium Spice Collection
+              Premium <span style={{ color: 'red' }}>Spice Collection</span>
             </Typography>
           </motion.div>
           <Grid container spacing={4}>
