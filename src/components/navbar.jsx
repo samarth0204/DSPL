@@ -94,28 +94,50 @@ export default function NavBar() {
               },
             }}
           >
-            <List sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              {menuItems.map((item) => (
-                <ListItem
-                  button
-                  key={item.name}
-                  onClick={() => {
-                    handleButtonClick(item);
-                    toggleDrawer(false)({ type: 'click' });
-                  }}
-                  sx={{
-                    backgroundColor: location.pathname === item.path ? 'red' : 'transparent',
-                    color: 'white',
-                    '&:hover': {
-                      backgroundColor: location.pathname === item.path ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
-                    },
-                    justifyContent: 'center',
-                  }}
-                >
-                  <ListItemText primary={item.name} sx={{ textAlign: 'center' }} />
-                </ListItem>
-              ))}
-            </List>
+            <List
+  sx={{
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    overflow: 'hidden', // Prevents the List from showing items outside the bounds
+  }}
+>
+  {menuItems.map((item, index) => (
+    <ListItem
+      button="true"
+      key={item.name}
+      onClick={() => {
+        handleButtonClick(item);
+        toggleDrawer(false)({ type: 'click' });
+      }}
+      sx={{
+        backgroundColor: location.pathname === item.path ? 'red' : 'transparent',
+        color: 'white',
+        '&:hover': {
+          backgroundColor: location.pathname === item.path ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
+        },
+        justifyContent: 'center',
+        opacity: 0, // Start with opacity 0
+        transform: 'translateY(30px)', // Start from below
+        visibility: 'hidden', // Make sure the item doesn't take up space initially
+        transition: 'transform 0.6s ease-out, opacity 0.6s ease-out, visibility 0s ease 0.6s', // Apply transition for transform and opacity
+        transitionDelay: `${index * 0.1}s`, // Stagger the delay for each item (sequential delay)
+        // Apply the "final" state when the drawer is open
+        '&.drawer-open': {
+          opacity: 1, // Fade in the item
+          transform: 'translateY(0)', // Move to the final position
+          visibility: 'visible', // Make sure it's visible
+          transitionDelay: `${index * 0.1}s`, // Staggered delay
+        },
+      }}
+      className={drawerOpen ? 'drawer-open' : ''}
+    >
+      <ListItemText primary={item.name} sx={{ textAlign: 'center' }} />
+    </ListItem>
+  ))}
+</List>
+
           </Drawer>
         ) : (
           <div style={{ display: 'flex', alignItems: 'center' }}>

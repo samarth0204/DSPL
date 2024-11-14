@@ -77,8 +77,7 @@ const AboutUs = () => {
         {/* Updated button to use Link for navigation */}
         <Link to="/about" style={{ textDecoration: 'none' }}>
           <button 
-          className="learn-more-btn"
-          href="#about"
+            className="learn-more-btn"
           >
             <span>Learn More</span>
           </button>

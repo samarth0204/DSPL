@@ -123,7 +123,7 @@ const ImageSlider = () => {
                     maxWidth: '100%' // Change maxWidth to 100% for better mobile view
                   }}
                 > 
-                  DivyDamini Masale
+                  DivyDamini <span style={{ color: 'red' }}>Masale</span>
                 </Typography>
                 <Typography 
                   variant="h2" 
@@ -143,7 +143,7 @@ const ImageSlider = () => {
                     marginBottom: { xs: 1, sm: 2 },
                   }}
                 >
-                  Quality products by Dhameja spices Pvt. Ltd.
+                  Quality products by <span style={{ color: 'red' }}>Dhameja Spices Pvt. Ltd.</span>
                 </Typography>
                 <Typography 
                   variant="h4" 

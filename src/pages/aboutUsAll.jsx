@@ -94,7 +94,7 @@ function AboutUs() {
             transition={{ duration: 0.8 }}
           >
             <Typography variant="h2" align="center" gutterBottom>
-              About Dhameja Spices Pvt. Ltd.
+              About <span style={{ color: 'red' }}>Dhameja Spices Pvt. Ltd.</span>
             </Typography>
           </motion.div>
 
@@ -304,7 +304,6 @@ function AboutUs() {
               color="primary"
               size="large"
               endIcon={<ArrowForwardIcon />}
-              href="#contact"
               >
               Contact Us
             </Button>
