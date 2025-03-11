@@ -13,7 +13,6 @@ import NatureIcon from '@mui/icons-material/Nature';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import BoltIcon from '@mui/icons-material/Bolt';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Divider } from '@mui/material';
 import aboutspice from "../images/aboutSpicesImage - Copy.png";
 import NavBar from '../components/navbar';
 import {Link} from 'react-router-dom';
@@ -68,13 +67,6 @@ const features = [
   }
 ];
 
-const timeline = [
-  { year: 2014, event: "Dhameja Spices founded" },
-  { year: 2021, event: "Expanded product line" },
-  { year: 2022, event: "Modernized production facilities" },
-  { year: 2023, event: "Achieved international quality certifications" },
-  { year: 2024, event: "Celebrating 10 years of excellence" }
-];
 
 
 
@@ -179,103 +171,6 @@ function AboutUs() {
               </Grid>
             ))}
           </Grid>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 0.8 }}
-          >
-            <Typography variant="h4" align="center" gutterBottom sx={{ mt: 8 }}>
-              Our Journey Through Time
-            </Typography>
-          </motion.div>
-  
-         
-          <Box sx={{ position: 'relative', my: 8 }}>
-            {/* Central Divider Line */}
-            <Divider
-  sx={{
-    position: 'absolute',
-    left: '50%',
-    top: 0,
-    bottom: 0,
-    border: '2px solid',
-    borderColor: {
-      xs: 'transparent', // For extra small screens
-      sm: 'black',      // For small screens
-      md: 'black',      // For medium screens
-      lg: 'primary.main' // For large screens and above
-    },
-    transform: 'translateX(-50%)', // Center the line
-    zIndex: 0,
-  }}
-/>
-
-            {timeline.map((item, index) => (
-              <Box key={index} sx={{ display: 'flex', mb: 4, flexDirection: { xs: 'column', md: 'row' } }}>
-                <motion.div
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 2.2 + index * 0.2, duration: 0.8 }}
-                  style={{
-                    flex: 1,
-                    display: 'flex',
-                    flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row' : 'row-reverse' },
-                    zIndex: 1, // Keep text above the divider
-                    alignItems: 'flex-start', // Ensure text aligns to the start
-                    paddingLeft: index % 2 === 0 ? 2 : 0,
-                    paddingRight: index % 2 === 0 ? 0 : 2,
-                    marginTop: { xs: 2, md: 0 }, // Add margin top for better spacing on mobile
-                    marginBottom: { xs: 2, md: 0 }, // Add margin bottom for better spacing on mobile
-                  }}
-                >
-                  {/* Adjusted Icon and Text Container */}
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: index % 2 === 0 ? 'flex-start' : 'flex-end',
-                      flex: '0 0 auto', // Prevent flex growth
-                      width: '100%', // Ensure it uses full width for alignment
-                    }}
-                  >
-                    {index % 2 === 0 && ( // Show icon on the left side of the text for left entries
-                      <Box
-                        sx={{
-                          width: 20,
-                          height: 20,
-                          borderRadius: '50%',
-                          bgcolor: 'primary.main',
-                          marginRight: 1,
-                        }}
-                      />
-                    )}
-                    <Box
-                      sx={{
-                        px: 2,
-                        textAlign: index % 2 === 0 ? 'left' : 'right',
-                        maxWidth: '90%', // Prevent text from getting too close to the center line
-                      }}
-                    >
-                      <Typography variant="h6">{item.year}</Typography>
-                      <Typography>{item.event}</Typography>
-                    </Box>
-                    {index % 2 !== 0 && ( // Show icon on the right side of the text only for right entries
-                      <Box
-                        sx={{
-                          width: 20,
-                          height: 20,
-                          borderRadius: '50%',
-                          bgcolor: 'primary.main',
-                          marginLeft: 1,
-                        }}
-                      />
-                    )}
-                  </Box>
-                </motion.div>
-              </Box>
-            ))}
-          </Box>
 
           <motion.div
             initial={{ opacity: 0 }}
