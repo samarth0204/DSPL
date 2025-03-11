@@ -96,7 +96,7 @@ function AboutUs() {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <Typography variant="h6" align="center" paragraph>
-              Welcome to Dhameja Spices Pvt. Ltd., where tradition meets excellence in the art of spice manufacturing. Established as a trusted name in the spice industry, we bring to you a rich legacy of authentic, high-quality spices that has been nurtured through 58 years of family expertise.
+              Welcome to Dhameja Spices Pvt. Ltd., where tradition meets excellence in the art of spice manufacturing. Established as a trusted name in the spice industry, we bring to you a rich legacy of authentic, high-quality spices that has been nurtured through family expertise.
             </Typography>
           </motion.div>
 
