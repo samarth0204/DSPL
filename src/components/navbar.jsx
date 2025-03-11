@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme, Box } from '@mui/material';
+import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme, Box, Typography } from '@mui/material';
 import MenuOpenOutlinedIcon from '@mui/icons-material/MenuOpenOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -41,127 +41,124 @@ export default function NavBar() {
   }, []);
 
   return (
-    <AppBar
-      position="fixed"
-      sx={{
-        background: scrolling ? 'black' : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3))',
-        transition: 'background 0.3s ease',
-      }}
-    >
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Box
-          component="img"
-          sx={{
-            height: 50,
-            padding: 1,
-            maxWidth: '100%',
-            objectFit: 'contain',
-            cursor: 'pointer',
-          }}
-          alt="Brand Logo"
-          src={logo}
-          onClick={() => navigate('/')}
-        />
-        <IconButton
-          size="large"
-          edge="end"
-          sx={{ 
-            color: 'white',
-            position: 'absolute',
-            top: 8,
-            right: 16,
-            zIndex: 1300,
-            display: { sm: 'none' }, // Hide on larger screens
-          }}
-          aria-label="menu"
-          onClick={toggleDrawer(!drawerOpen)}
-        >
-          {drawerOpen ? <CloseIcon sx={{zIndex: 1300}}/> : <MenuOpenOutlinedIcon />}
-        </IconButton>
-        {isMobile ? (
-          <Drawer
-            anchor="bottom"
-            open={drawerOpen}
-            onClose={toggleDrawer(false)}
-            PaperProps={{
-              sx: { 
-                backdropFilter: 'blur(10px)', // Adds a blurring effect
-                backgroundColor: 'rgba(255, 255, 255, 0.1)', // Adds a translucent white background
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow for depth
-                border: '1px solid rgba(255, 255, 255, 0.2)', // Adds a light border to enhance the glass effect
-                borderRadius: '10px 10px 0 0', // Optional, gives rounded corners
-                height: '90%',
-              },
+    <Box>
+      <AppBar
+        position="fixed"
+        sx={{
+          background: scrolling ? 'black' : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3))',
+          transition: 'background 0.3s ease',
+        }}
+      >
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box
+            component="img"
+            sx={{
+              height: 50,
+              padding: 1,
+              maxWidth: '100%',
+              objectFit: 'contain',
+              cursor: 'pointer',
             }}
+            alt="Brand Logo"
+            src={logo}
+            onClick={() => navigate('/')}
+          />
+          <IconButton
+            size="large"
+            edge="end"
+            sx={{ 
+              color: 'white',
+              position: 'absolute',
+              top: 8,
+              right: 16,
+              zIndex: 1300,
+              display: { sm: 'none' }, // Hide on larger screens
+            }}
+            aria-label="menu"
+            onClick={toggleDrawer(!drawerOpen)}
           >
-            <List
-  sx={{
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    overflow: 'hidden', // Prevents the List from showing items outside the bounds
-  }}
->
-  {menuItems.map((item, index) => (
-    <ListItem
-      button="true"
-      key={item.name}
-      onClick={() => {
-        handleButtonClick(item);
-        toggleDrawer(false)({ type: 'click' });
-      }}
-      sx={{
-        backgroundColor: location.pathname === item.path ? 'red' : 'transparent',
-        color: 'white',
-        '&:hover': {
-          backgroundColor: location.pathname === item.path ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
-        },
-        justifyContent: 'center',
-        opacity: 0, // Start with opacity 0
-        transform: 'translateY(30px)', // Start from below
-        visibility: 'hidden', // Make sure the item doesn't take up space initially
-        transition: 'transform 0.6s ease-out, opacity 0.6s ease-out, visibility 0s ease 0.6s', // Apply transition for transform and opacity
-        transitionDelay: `${index * 0.1}s`, // Stagger the delay for each item (sequential delay)
-        // Apply the "final" state when the drawer is open
-        '&.drawer-open': {
-          opacity: 1, // Fade in the item
-          transform: 'translateY(0)', // Move to the final position
-          visibility: 'visible', // Make sure it's visible
-          transitionDelay: `${index * 0.1}s`, // Staggered delay
-        },
-      }}
-      className={drawerOpen ? 'drawer-open' : ''}
-    >
-      <ListItemText primary={item.name} sx={{ textAlign: 'center' }} />
-    </ListItem>
-  ))}
-</List>
-
-          </Drawer>
-        ) : (
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            {menuItems.map((item) => (
-              <Button
-                color="inherit"
-                key={item.name}
-                onClick={() => handleButtonClick(item)}
-                sx={{
-                  marginLeft: 2,
-                  backgroundColor: location.pathname === item.path ? 'red' : 'transparent',
-                  border: location.pathname === item.path ? 'none' : '1px solid red',
-                  color: 'white',
-                  '&:hover': {
-                    backgroundColor: location.pathname === item.path ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
-                  },
-                }}
-              >
-                {item.name}
-              </Button>
-            ))}
-          </div>
-        )}
-      </Toolbar>
-    </AppBar>
+            {drawerOpen ? <CloseIcon sx={{zIndex: 1300}}/> : <MenuOpenOutlinedIcon />}
+          </IconButton>
+          {isMobile ? (
+            <Drawer
+              anchor="bottom"
+              open={drawerOpen}
+              onClose={toggleDrawer(false)}
+              PaperProps={{
+                sx: { 
+                  backdropFilter: 'blur(10px)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: '10px 10px 0 0',
+                  height: '90%',
+                },
+              }}
+            >
+              <List sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                {menuItems.map((item, index) => (
+                  <ListItem
+                    button="true"
+                    key={item.name}
+                    onClick={() => {
+                      handleButtonClick(item);
+                      toggleDrawer(false)({ type: 'click' });
+                    }}
+                    sx={{
+                      backgroundColor: location.pathname === item.path ? 'red' : 'transparent',
+                      color: 'white',
+                      '&:hover': {
+                        backgroundColor: location.pathname === item.path ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
+                      },
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <ListItemText primary={item.name} sx={{ textAlign: 'center' }} />
+                  </ListItem>
+                ))}
+              </List>
+            </Drawer>
+          ) : (
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              {menuItems.map((item) => (
+                <Button
+                  color="inherit"
+                  key={item.name}
+                  onClick={() => handleButtonClick(item)}
+                  sx={{
+                    marginLeft: 2,
+                    backgroundColor: location.pathname === item.path ? 'red' : 'transparent',
+                    border: location.pathname === item.path ? 'none' : '1px solid red',
+                    color: 'white',
+                    '&:hover': {
+                      backgroundColor: location.pathname === item.path ? 'darkred' : 'rgba(255, 0, 0, 0.1)',
+                    },
+                  }}
+                >
+                  {item.name}
+                </Button>
+              ))}
+            </div>
+          )}
+        </Toolbar>
+      </AppBar>
+      {/* Disclaimer Text */}
+      <Typography
+        variant="body2"
+        sx={{
+          position: 'fixed',
+          bottom: 0,
+          width: '100%',
+          textAlign: 'center',
+          backgroundColor: 'black',
+          color: 'white',
+          padding: '8px 0',
+          fontSize: '12px',
+          zIndex: 1300,
+        }}
+      >
+        This website is not developed completely, all the texts and images are for development use only.
+      </Typography>
+    </Box>
   );
 }
